@@ -3,9 +3,10 @@ import { useState } from 'react';
 import api from '../../app/axios'
 import { Eye, EyeClosed, User, Mail } from 'lucide-react'
 import toast from 'react-hot-toast';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 export default function RegisterPage() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -29,6 +30,7 @@ export default function RegisterPage() {
                 confirmPassword: ''
             })
             setError([])
+            navigate('/login')
         } catch (err) {
             setError(err.response.data.errors)
             toast.error(err.response.data.message || 'Registration failed. Please try again.')
@@ -65,7 +67,7 @@ export default function RegisterPage() {
                     RegisterPage
                 </h1>
 
-                <p className={styles.subtitle}>Mulai sekarang, nikmati ngopi tanpa ribet</p>
+                <p className={styles.subtitle}>From now on, enjoy coffee without any hassle</p>
 
                 <div className={styles.form}>
                     <label htmlFor="name" className={`${styles.label} ${nameError ? styles.labelError : ''}`}>Name</label>
