@@ -3,9 +3,11 @@ import { User, Eye, EyeClosed } from 'lucide-react'
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import api from '../../app/axios'
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 export default function LoginPage() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -34,6 +36,7 @@ export default function LoginPage() {
             })
             setError([])
             localStorage.setItem('token', data.data.token)
+            navigate('/dashboard')
         } catch (err) {
             setError(err.response.data.errors)
             toast.error('Login failed. Please try again.')
