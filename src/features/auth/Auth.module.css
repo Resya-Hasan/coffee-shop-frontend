@@ -28,6 +28,10 @@
     border: 1px solid red;
 }
 
+.card-form input:focus {
+    outline: none;
+}
+
 .card-form h1 {
     color: var(--primary-dark);
     font-size: 2rem;
@@ -114,4 +118,24 @@
 
 .btn-submit:hover {
     background-color: #5d6e5b;
+}
+
+.footer {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.text {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.link {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }

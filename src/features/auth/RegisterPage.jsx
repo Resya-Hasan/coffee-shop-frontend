@@ -3,6 +3,7 @@ import { useState } from 'react';
 import api from '../../app/axios'
 import { Eye, EyeClosed, User, Mail } from 'lucide-react'
 import toast from 'react-hot-toast';
+import { Link } from 'react-router';
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({
@@ -20,7 +21,6 @@ export default function RegisterPage() {
 
         try {
             const response = await api.post('/auth/register', formData)
-            console.log('Registration successful:', response.data)
             toast.success('Registration successful! Please login.')
             setFormData({
                 name: '',
@@ -30,7 +30,6 @@ export default function RegisterPage() {
             })
             setError([])
         } catch (err) {
-            console.log('Registration failed:', err.response.data)
             setError(err.response.data.errors)
             toast.error(err.response.data.message || 'Registration failed. Please try again.')
         }
@@ -166,6 +165,9 @@ export default function RegisterPage() {
                     ) : null}
                 </div>
                 <button type="submit" className={styles['btn-submit']}>Register</button>
+                <div className={styles.footer}>
+                    <p className={styles.text}>Already have an account? <Link to="/login" className={styles.link}>Login here</Link></p>
+                </div>
             </form>
         </div>
     )
