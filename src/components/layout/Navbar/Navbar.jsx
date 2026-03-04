@@ -1,6 +1,7 @@
 import Button from '../../ui/Button/Button';
 import styles from './Navbar.module.css';
-import { User } from 'lucide-react';
+import Input from '../../ui/input/Input';
+import { Search } from 'lucide-react'
 
 const Navbar = () => {
     return (
@@ -11,10 +12,15 @@ const Navbar = () => {
                 <li><a href="/register">Cart</a></li>
                 <li><a href="/login">Likes</a></li>
             </ul>
-            <input type="text" placeholder="Search..." className={styles['navbar-search']} />
-            <div className={styles['container-btn']}>
+            <div className={styles['navbar-subContainer']}>
+                <Input
+                    type="text"
+                    placeholder="Search..."
+                    icon={<Search />}
+                    size={"medium"}
+                />
                 <Button
-                    desaign={"border-only"}
+                    variant={"border-only"}
                     color="btn-primary"
                     size={"medium"}
                     onClick={() => alert('Login clicked!')}

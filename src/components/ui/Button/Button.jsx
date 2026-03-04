@@ -2,7 +2,7 @@ import styles from "./Button.module.css";
 import React from "react";
 
 const Button = ({
-    children, onClick, size = "medium", color = "btn-primary", disabled = false, icon, type = "button", desaign
+    children, onClick, size = "medium", color = "btn-primary", disabled = false, icon, type = "button", variant
 }) => {
 
     const iconSizeMap = {
@@ -14,7 +14,7 @@ const Button = ({
     return (
         <button
             onClick={onClick}
-            className={`${styles.btn} ${styles[desaign]} ${styles[color]} ${styles[size]}`}
+            className={`${styles.btn} ${styles[variant]} ${styles[color]} ${styles[size]}`}
             disabled={disabled}
             type={type}
         >
