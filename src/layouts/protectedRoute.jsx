@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from 'react-router';
+import Navabr from '../components/layout/Navbar/Navbar';
 
 const ProtectedRoute = () => {
     
@@ -8,7 +9,12 @@ const ProtectedRoute = () => {
         return <Navigate to="/login" />;
     }
 
-    return <Outlet />;
+    return (
+        <div>
+            <Navabr />
+            <Outlet />
+        </div>
+    );
 }
 
 export default ProtectedRoute;

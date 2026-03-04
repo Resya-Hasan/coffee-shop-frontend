@@ -1,0 +1,91 @@
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* color variants */
+
+.btn-primary {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* design variants */
+
+.default {
+    background-color: var(--primary-dark);
+    color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.default:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.no-bg {
+    background: none;
+    color: var(--primary-dark);
+    box-shadow: none;
+}
+
+.no-bg:hover {
+    background: none;
+    color: var(--primary-hover);
+    box-shadow: none;
+}
+
+.border-only {
+    background: none;
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
+    box-shadow: none;
+}
+
+.border-only:hover {
+    background: var(--primary-dark);
+    color: white;
+    box-shadow: none;
+    transform: scale(1.1);
+}
+
+/* size variants */
+
+.small {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.6rem;
+}
+
+.small:hover {
+    transform: scale(1.05);
+}
+
+.medium {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.medium:hover {
+    transform: scale(1.05);
+}
+
+.large {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.large:hover {
+    transform: scale(1.05);
+}
