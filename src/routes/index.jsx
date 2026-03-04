@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router';
 import RegisterPage from '../features/auth/RegisterPage';
 import LoginPage from '../features/auth/LoginPage';
-import Dashboard from '../features/dashboard/dashboard';
+import Dashboard from '../features/dashboard/Dashboard';
 import ProtectedRoute from '../layouts/protectedRoute';
 import PublicRoute from '../layouts/publicRoute';
 
