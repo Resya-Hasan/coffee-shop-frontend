@@ -1,5 +1,5 @@
 
-.navabrContainer {
+.navbarContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,5 +15,57 @@
 
 .navbar-subContainer {
     display: flex;
+    align-items: center;
     gap: 1rem;
+}
+
+.navbar-logo {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    text-decoration: none;;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    color: var(--primary-dark)
+}
+
+.humburger {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .navbarContainer {
+        display: flex;
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .humburger {
+        display: block;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-subContainer {
+        background: #ffffff;
+        padding: 1rem;
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0.7rem
+    }
+
+    .show {
+        display: flex;
+    }
 }
