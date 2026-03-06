@@ -72,3 +72,24 @@
     cursor: not-allowed;
     opacity: 0.6;
 }
+
+@media (max-width: 480px) {
+    .input {
+        width: 9rem;
+    }
+
+    .small {
+        padding: 0.1rem 0.3rem;
+        font-size: 0.6rem;
+    }
+
+    .medium {
+        padding: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .large {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.9rem
+    }
+}

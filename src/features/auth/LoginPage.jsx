@@ -36,7 +36,7 @@ export default function LoginPage() {
             })
             setError([])
             localStorage.setItem('token', data.data.token)
-            navigate('/dashboard')
+            navigate('/')
         } catch (err) {
             setError(err.response.data.errors)
             toast.error('Login failed. Please try again.')
