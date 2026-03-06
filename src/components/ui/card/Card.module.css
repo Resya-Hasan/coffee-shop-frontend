@@ -1,25 +1,41 @@
-
-
 .card {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 .cardImageWrapper {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
 
+.loveIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
 .cardImage {
     width: 100%;
-    height:100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -27,7 +43,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px 20px;
-    gap: 25px;
+    gap: 5px;
 }
 
 .cardTitle {
@@ -49,10 +65,37 @@
     padding: 10px 0;
     opacity: 0.8;
     border: dashed 3px var(--primary-dark);
+    color: var(--primary-dark);
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.cardPrice p {
-    color: var(--primary-dark);
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
-    font-weight: bold;
+    color: #666;
+    margin-top: 10px;
+}
+
+@media (max-width: 1700px) {
+    .cardPrice {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .cardTitle {
+        font-size: 12px;
+    }
+
+    .cardPrice {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    .cardInfo {
+        font-size: 8px;
+    }
 }

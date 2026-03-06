@@ -9,9 +9,11 @@ const HomePage = () => {
         title: "Ethiopia Guji Hambella Wamena Funky Natural 200g Kopi Arabica",
         imageUrl: "https://d8g5mz6srwlcs.cloudfront.net/thumbnail/6977474cb1faf944156839.png",
         price: 175500,
-        sold: 21
+        sold: 21,
+        stock: 10
     }
 
+    const totalData = 10;
 
     return (
         <div>
@@ -20,21 +22,21 @@ const HomePage = () => {
 
             <h2>Popular Coffee</h2>
             <div className={styles.productList}>
-                <Card
-                    title={data.title}
-                    imageUrl={data.imageUrl}
-                    price={data.price}
-                    sold={data.sold}
-                    button={
-                        <Button
-                            onClick={() => alert("Buy Now clicked")}
-                            icon={<ShoppingCart />}
-                            size="medium"
-                        >
-                            Add to Cart
-                        </Button>
-                    }
-                />
+                {
+                    Array.from({ length: totalData }).map((_, index) => {
+                        return (
+                            <Card
+                                key={index}
+                                title={data.title}
+                                imageUrl={data.imageUrl}
+                                price={data.price}
+                                sold={data.sold}
+                                stock={data.stock}
+                            />
+                        )
+                    })
+                }
+
             </div>
         </div>
     )

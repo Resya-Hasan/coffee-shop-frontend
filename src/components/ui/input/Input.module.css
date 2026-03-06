@@ -74,18 +74,22 @@
 }
 
 @media (max-width: 480px) {
+    .input {
+        width: 9rem;
+    }
+
     .small {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.7rem;
+        padding: 0.1rem 0.3rem;
+        font-size: 0.6rem;
     }
 
     .medium {
-        padding: 0.3rem;
-        font-size: 0.8rem;
+        padding: 0.2rem;
+        font-size: 0.7rem;
     }
 
     .large {
-        padding: 0.5rem 0.8rem;
-        font-size: 1rem
+        padding: 0.4rem 0.7rem;
+        font-size: 0.9rem
     }
 }
