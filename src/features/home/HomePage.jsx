@@ -1,42 +1,50 @@
 import Navbar from "../../components/layout/Navbar/Navbar"
 import styles from "./Home.module.css"
 import Card from "../../components/ui/card/Card"
-import Button from "../../components/ui/Button/Button"
-import { ShoppingCart } from "lucide-react"
+import { useEffect, useState } from "react"
+import api from "../../app/axios"
+import toast from "react-hot-toast"
 
 const HomePage = () => {
-    const data = {
-        title: "Ethiopia Guji Hambella Wamena Funky Natural 200g Kopi Arabica",
-        imageUrl: "https://d8g5mz6srwlcs.cloudfront.net/thumbnail/6977474cb1faf944156839.png",
-        price: 175500,
-        sold: 21,
-        stock: 10
+    const [data, setData] = useState([])
+
+    const fetchData = async () => {
+        try {
+            const { data } = await api.get("/coffees")
+            setData(data.data)
+        } catch (err) {
+            toast.error("Failed to fetch data")
+        }
     }
 
-    const totalData = 10;
+    useEffect(() => {
+        fetchData()
+    }, [])
 
     return (
         <div>
             <Navbar />
-            <h1>Home Page</h1>
+            <div className={styles.containerProduct}>
 
-            <h2>Popular Coffee</h2>
-            <div className={styles.productList}>
-                {
-                    Array.from({ length: totalData }).map((_, index) => {
-                        return (
-                            <Card
-                                key={index}
-                                title={data.title}
-                                imageUrl={data.imageUrl}
-                                price={data.price}
-                                sold={data.sold}
-                                stock={data.stock}
-                            />
-                        )
-                    })
-                }
+                <h2>Popular Coffee</h2>
 
+                <div className={styles.productList}>
+                    {
+                        data.map((el) => {
+                            return (
+                                <Card
+                                    key={el.id}
+                                    title={el.name}
+                                    imageUrl={el.CoffeeImages[0].imgUrl}
+                                    price={el.price}
+                                    sold={el.sold}
+                                    stock={el.stock}
+                                />
+                            )
+                        })
+                    }
+
+                </div>
             </div>
         </div>
     )
