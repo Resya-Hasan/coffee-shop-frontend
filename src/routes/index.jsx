@@ -5,6 +5,7 @@ import Dashboard from '../features/dashboard/Dashboard';
 import ProtectedRoute from '../layouts/protectedRoute';
 import PublicRoute from '../layouts/publicRoute';
 import HomePage from '../features/home/HomePage';
+import AdminRoute from '../layouts/adminRoute';
 
 export default function AppRoutes() {
     return (
@@ -15,7 +16,9 @@ export default function AppRoutes() {
                 <Route path='/login' element={<LoginPage />} />
             </Route>
             <Route element={<ProtectedRoute />}>
-                <Route path='/dashboard' element={<Dashboard />} />
+                <Route path='admin' element={<AdminRoute />}>
+                    <Route path='dashboard' element={<Dashboard />} />
+                </Route>
             </Route>
         </Routes>
     )
