@@ -3,10 +3,13 @@ import styles from './Navbar.module.css';
 import Input from '../../ui/input/Input';
 import { Search, List } from 'lucide-react'
 import { Link, useNavigate } from 'react-router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../features/auth/AuthSlice';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const dispatch = useDispatch();
 
     const isLogin = !!localStorage.getItem('token');
     const navigate = useNavigate();
@@ -17,6 +20,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
+        dispatch(logout());
         navigate('/login')
     }
 

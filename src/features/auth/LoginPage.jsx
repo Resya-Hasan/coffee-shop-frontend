@@ -4,9 +4,12 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import api from '../../app/axios'
 import { Link, useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { setUser } from './AuthSlice';
 
 export default function LoginPage() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [formData, setFormData] = useState({
         email: '',
@@ -36,9 +39,11 @@ export default function LoginPage() {
             })
             setError([])
             localStorage.setItem('token', data.data.token)
+            dispatch(setUser(data.data.user))
             navigate('/')
         } catch (err) {
-            setError(err.response.data.errors)
+            console.log(err.response.data.errors)
+            setError(err.response.data.errors || [])
             toast.error('Login failed. Please try again.')
         }
     }
