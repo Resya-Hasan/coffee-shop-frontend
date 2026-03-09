@@ -22,6 +22,26 @@
     background-color: var(--primary-hover);
 }
 
+.btn-primary-no-bg {
+    color: var(--primary-dark);
+}
+
+.btn-primary-no-bg:hover {
+    color: var(--primary-hover);
+}
+
+.btn-white-no-bg {
+    color: white;
+}
+
+.btn-danger-no-bg {
+    color: var(--danger);
+}
+
+.btn-danger-no-bg:hover {
+    color: var(--danger-hover);
+}
+
 /* design variants */
 
 .default {
@@ -37,13 +57,11 @@
 
 .no-bg {
     background: none;
-    color: var(--primary-dark);
     box-shadow: none;
 }
 
 .no-bg:hover {
     background: none;
-    color: var(--primary-hover);
     box-shadow: none;
 }
 

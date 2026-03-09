@@ -16,9 +16,10 @@ export default function AppRoutes() {
                 <Route path='/login' element={<LoginPage />} />
             </Route>
             <Route element={<ProtectedRoute />}>
-                <Route path='admin' element={<AdminRoute />}>
-                    <Route path='dashboard' element={<Dashboard />} />
-                </Route>
+
+            </Route>
+            <Route path='admin' element={<AdminRoute />}>
+                <Route path='dashboard' element={<Dashboard />} />
             </Route>
         </Routes>
     )

@@ -1,11 +1,11 @@
+import styles from "./Dashboard.module.css";
 
-
-const dashboard = () => {
+const Dashboard = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Dashboard</h1>
         </div>
     );
 }
 
-export default dashboard;
+export default Dashboard;
